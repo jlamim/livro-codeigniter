@@ -1,0 +1,20 @@
+{
+	"description": "CodeIgniter Teoria na Prática",
+	"name": "codeigniter/framework",
+	"type": "example",
+	"homepage": "http://livrocodeigniter.com.br",
+	"license": "MIT",
+	"support": {
+		"forum": "http://forum.codeigniter.com/",
+		"wiki": "https://github.com/bcit-ci/CodeIgniter/wiki",
+		"irc": "irc://irc.freenode.net/codeigniter",
+		"source": "https://github.com/bcit-ci/CodeIgniter"
+	},
+	"require": {
+		"php": ">=5.2.4",
+    "kriswallsmith/buzz": "*"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
