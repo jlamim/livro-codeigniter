@@ -1,1 +1,3 @@
-# livro-codeigniter-teoria-na-pratica
+# Livro "CodeIgniter Teoria na Prática"
+
+Informações em breve.
