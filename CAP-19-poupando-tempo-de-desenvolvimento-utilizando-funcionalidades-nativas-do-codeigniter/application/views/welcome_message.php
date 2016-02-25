@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Trabalhando com Composer</title>
+	<title>Welcome to CodeIgniter</title>
 
 	<style type="text/css">
 
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		padding: 14px 15px 10px 15px;
 	}
 
-	code {
+	code, pre {
 		font-family: Consolas, Monaco, Courier New, Courier, monospace;
 		font-size: 12px;
 		background-color: #f9f9f9;
@@ -68,13 +68,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-	<h1>Trabalhando com Composer</h1>
+	<h1>Poupando tempo de desenvolvimento utilizando funcionalidades nativas do CodeIgniter</h1>
 
 	<div id="body">
-		<p>As informações abaixo foram obtidas através da execução do método $browser->get('http://www.livrocodeigniter.com.br').</p>
+		<p>Exemplo de uso do mapeamento de diretório</p>
 
-		<code><?=$response?></code>
+		<p>O diretório utilizado é o "application/language".</p>
 
+		<p>Mapeando o diretório de maneira recursiva:</p>
+		<pre><?php var_dump($recursive_map); ?></pre>
+
+		<p>Mapeando somente o diretório raiz:</p>
+		<pre><?php var_dump($map); ?></pre>
 	</div>
 
 	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>

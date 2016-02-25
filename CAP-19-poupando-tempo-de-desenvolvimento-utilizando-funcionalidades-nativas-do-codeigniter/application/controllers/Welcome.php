@@ -16,12 +16,13 @@ class Welcome extends CI_Controller {
 	 *
 	 * So any other public methods not prefixed with an underscore will
 	 * map to /index.php/welcome/<method_name>
-	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
 	{
-		$browser = new Buzz\Browser();
-		$data['response'] = $browser->get('http://www.casadocodigo.com.br');
-		$this->load->view('welcome_message', $data);
+		$this->load->helper('directory');
+		$data['recursive_map'] = directory_map('./application/language/', FALSE, TRUE);
+		$data['map'] = directory_map('./application/language/', TRUE, TRUE);
+	    $this->load->view('welcome_message', $data);
 	}
 }
