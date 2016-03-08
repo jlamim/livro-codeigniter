@@ -7,17 +7,19 @@ class Contato extends CI_Controller {
   {
     parent::__construct();
     $this->load->library(array('form_validation','session'));
+    $this->load->helper('captcha');
   }
 
 	public function FaleConosco()
 	{
 		$data['title'] = "LCI | Fale Conosco";
-		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter Da teoria à prática";
+		$data['description'] = "Exercício de exemplo do capítulo 11 do livro Codeigniter Da teoria à prática";
 
     $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[3]');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('assunto', 'Assunto', 'trim|required|min_length[5]');
     $this->form_validation->set_rules('mensagem', 'Mensagem', 'trim|required|min_length[30]');
+    $this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_captcha_check');
 
     if($this->form_validation->run() == FALSE){
       $data['formErrors'] = validation_errors();
@@ -32,18 +34,20 @@ class Contato extends CI_Controller {
       }
     }
 
+    $data['captcha_image'] = $this->GenCaptcha();
 		$this->load->view('fale-conosco',$data);
 	}
 
   public function TrabalheConosco()
 	{
 		$data['title'] = "LCI | Trabalhe Conosco";
-		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter Da teoria à prática";
+		$data['description'] = "Exercício de exemplo do capítulo 11 do livro Codeigniter Da teoria à prática";
 
     $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[3]');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
     $this->form_validation->set_rules('telefone', 'Telefone', 'trim|required|min_length[5]');
     $this->form_validation->set_rules('mensagem', 'Mensagem', 'trim|required|min_length[30]');
+    $this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_captcha_check');
 
     if($this->form_validation->run() == FALSE){
       $data['formErrors'] = validation_errors();
@@ -65,6 +69,7 @@ class Contato extends CI_Controller {
       }
     }
 
+    $data['captcha_image'] = $this->GenCaptcha();
 		$this->load->view('trabalhe-conosco',$data);
 	}
 
@@ -125,6 +130,31 @@ class Contato extends CI_Controller {
       $data['fileData'] = $this->upload->data();
     }
     return $data;
+  }
+
+  private function GenCaptcha()
+  {
+    $vals = array(
+          'img_path' => './captcha/',
+          'img_url'  => base_url('captcha')
+          );
+
+    $cap = create_captcha($vals);
+    $this->session->set_userdata('user_captcha_value',$cap['word']);
+    return $cap['image'];
+  }
+
+  public function captcha_check($str)
+  {
+    if ($str === $this->session->userdata('user_captcha_value'))
+    {
+      return TRUE;
+    }
+    else
+    {
+      $this->form_validation->set_message('captcha_check', 'O texto informado está incorreto.');
+      return FALSE;
+    }
   }
 
 }
