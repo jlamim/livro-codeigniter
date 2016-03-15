@@ -7,4 +7,18 @@ class Base extends CI_Controller {
 	{
 		$this->load->view('home');
 	}
+
+	public function Upload()
+	{
+		if (!$this->upload->do_upload('image'))
+		{
+			$data['info'] = $this->upload->display_errors();			
+		}
+		else
+		{
+			$data['info'] = "Imagem enviada com sucesso!";
+			$data['info_upload'] = $this->upload->data();
+		}
+		$this->load->view('home', $data);
+	}
 }
