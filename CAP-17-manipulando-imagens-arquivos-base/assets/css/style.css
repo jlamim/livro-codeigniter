@@ -6,6 +6,9 @@ body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
+.container {
+  max-width:750px;
+}
 .footer {
   position: absolute;
   bottom: 0;
