@@ -1,8 +1,8 @@
 {
-	"description": "CodeIgniter Teoria na Prática",
+	"description": "The CodeIgniter framework",
 	"name": "codeigniter/framework",
-	"type": "example",
-	"homepage": "http://livrocodeigniter.com.br",
+	"type": "project",
+	"homepage": "https://codeigniter.com",
 	"license": "MIT",
 	"support": {
 		"forum": "http://forum.codeigniter.com/",
@@ -12,9 +12,6 @@
 	},
 	"require": {
 		"php": ">=5.2.4",
-    "kriswallsmith/buzz": "*"
-	},
-	"require-dev": {
-		"mikey179/vfsStream": "1.1.*"
+		"phpmailer/phpmailer": "~5.2"
 	}
 }
