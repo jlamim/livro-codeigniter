@@ -8,7 +8,7 @@
     <meta name="description" content="Capítulo onde são apresentados os métodos nativos do CI para manipulação de imagens.">
     <meta name="author" content="Jonathan Lamim Antunes">
 
-    <title>Livro CodeIgniter Teoria na Prática - Manipulação de Imagens</title>
+    <title>livro CodeIgniter - Manipulação de Imagens</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
