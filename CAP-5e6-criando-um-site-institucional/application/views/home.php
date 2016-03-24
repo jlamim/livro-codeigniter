@@ -49,7 +49,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">Ensinando através da prática</h1>
-            <p class="lead">Até aqui você aprendeu como criar um <i>controller</i>, uma <i>view</i> e a usar a função <i>base_url</i> do helper <i>url</i> utilizando o livro "CodeIgniter Da teoria à prática".</p>
+            <p class="lead">Até aqui você aprendeu como criar um <i>controller</i>, uma <i>view</i> e a usar a função <i>base_url</i> do helper <i>url</i> utilizando o livro "CodeIgniter Produtividade na criação de aplicações web em PHP".</p>
           </div>
 
         </div>

@@ -12,7 +12,7 @@ class Contato extends CI_Controller {
 	public function FaleConosco()
 	{
 		$data['title'] = "LCI | Fale Conosco";
-		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter Da teoria à prática";
+		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter";
 
     $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[3]');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
@@ -38,7 +38,7 @@ class Contato extends CI_Controller {
   public function TrabalheConosco()
 	{
 		$data['title'] = "LCI | Trabalhe Conosco";
-		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter Da teoria à prática";
+		$data['description'] = "Exercício de exemplo do capítulo 5 do livro Codeigniter";
 
     $this->form_validation->set_rules('nome', 'Nome', 'trim|required|min_length[3]');
     $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');

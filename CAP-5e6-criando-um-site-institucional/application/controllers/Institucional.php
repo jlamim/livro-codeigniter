@@ -11,7 +11,7 @@ class Institucional extends CI_Controller {
 	public function index()
 	{
 		$data['title'] = "LCI | Home";
-		$data['description'] = "Exercício de exemplo do capítulo 2 do livro Codeigniter Da teoria à prática";
+		$data['description'] = "Exercício de exemplo do capítulo 2 do livro Codeigniter";
 
 		$this->load->view('home',$data);
 	}
