@@ -29,7 +29,7 @@ class Institucional extends CI_Controller {
 
 	public function Servicos()
 	{
-		$data['title'] = "LCI | A Empresa";
+		$data['title'] = "LCI | Serviços";
 		$data['description'] = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget sem et odio cursus placerat. Donec aliquet, velit eget elementum eleifend, lacus elit elementum justo, dapibus posuere mi purus a sapien. Suspendisse potenti. ";
 
 		$this->load->view('servicos',$data);
