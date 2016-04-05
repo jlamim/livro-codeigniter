@@ -14,27 +14,36 @@ class User extends CI_Controller {
   {
     $this->form_validation->set_rules('email','Email','required|min_length[1]|valid_email|trim');
     $this->form_validation->set_rules('passw','Senha','required|min_length[6]|trim');
-    if($this->form_validation->run() == FALSE){
+    if($this->form_validation->run() == FALSE)
+    {
       $data['error'] = validation_errors();
-    }else{
+    }
+    else
+    {
       $dataLogin = $this->input->post();
       $res = $this->User_model->Login($dataLogin);
 
-      if($res){
-
-        foreach($res as $result){
-          if (password_verify($dataLogin['passw'], $result->passw)) {
+      if($res)
+      {
+        foreach($res as $result)
+        {
+          if (password_verify($dataLogin['passw'], $result->passw))
+          {
             $data['error'] = null;
             $this->session->set_userdata('logged',true);
             $this->session->set_userdata('email',$result->email);
             $this->session->set_userdata('id',$result->id);
             redirect();
-          }else{
+          }
+          else
+          {
             $data['error'] = "Senha incorreta.";
           }
         }
 
-      }else{
+      }
+      else
+      {
         $data['error'] = "Usuário não cadastrado.";
       }
     }
@@ -55,21 +64,28 @@ class User extends CI_Controller {
     $this->form_validation->set_rules('name','Nome','required|min_length[3]|trim');
     $this->form_validation->set_rules('email','Email','required|min_length[1]|valid_email|trim');
     $this->form_validation->set_rules('passw','Senha','required|min_length[6]|trim');
-    if($this->form_validation->run() == FALSE){
+    if($this->form_validation->run() == FALSE)
+    {
       $data['error'] = validation_errors();
-    }else{
+    }
+    else
+    {
       $dataRegister = $this->input->post();
       $res = $this->User_model->Save($dataRegister);
-      if($res){
+      if($res)
+      {
         $data['error'] = null;
-      }else{
+      }
+      else
+      {
         $data['error'] = "Não foi possível criar o usuário.";
       }
 
     }
     if($data['error'])
       $this->load->view('login',$data);
-    else{
+    else
+    {
       $this->session->set_userdata('logged',true);
       $this->session->set_userdata('email',$res->email);
       $this->session->set_userdata('id',$res->id);
@@ -82,9 +98,12 @@ class User extends CI_Controller {
     $data['success'] = null;
     $data['error'] = null;
     $this->form_validation->set_rules('passw','Senha','required|min_length[6]|trim');
-    if($this->form_validation->run() == FALSE){
+    if($this->form_validation->run() == FALSE)
+    {
       $data['error'] = validation_errors();
-    }else{
+    }
+    else
+    {
       $data = $this->input->post();
       $this->User_model->Update($data);
       $data['success'] = "Senha alterada com sucesso!";
@@ -94,7 +113,8 @@ class User extends CI_Controller {
     $this->load->view('alterar-senha',$data);
   }
 
-  public function URLs(){
+  public function URLs()
+  {
     $this->load->model('Urls_model');
     $urls = $this->Urls_model->GetAllByUser($this->session->userdata('id'));
     $data['urls'] = $urls;
