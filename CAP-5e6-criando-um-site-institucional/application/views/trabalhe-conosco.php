@@ -38,7 +38,7 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-2 control-label" for="assunto">Telefone de Contato</label>
+          <label class="col-md-2 control-label" for="telefone">Telefone de Contato</label>
           <div class="col-md-8">
             <?= form_input(array("name"=>"telefone","id"=>"telefone"),set_value('telefone'),array("class"=>"form-control input-md","required"=>"","type"=>"text","placeholder"=>"Telefone de Contato")); ?>
           </div>

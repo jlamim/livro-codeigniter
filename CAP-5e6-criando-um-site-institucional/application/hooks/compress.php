@@ -1,4 +1,5 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
 function compress()
 {
     ini_set("pcre.recursion_limit", "16777");
@@ -27,7 +28,6 @@ function compress()
 
     $new_buffer = preg_replace($re, " ", $buffer);
 
-    // We are going to check if processing has working
     if ($new_buffer === null)
     {
         $new_buffer = $buffer;
@@ -38,4 +38,4 @@ function compress()
 }
 
 /* End of file compress.php */
-/* Location: ./system/application/hooks/compress.php */
+/* Location: ./application/hooks/compress.php */
