@@ -124,7 +124,9 @@ class Base extends CI_Controller {
 		{
 			$data['message'] = $this->image_lib->display_errors();
 			$data['status'] = false;
-		}else{
+		}
+		else
+		{
 			$data['message'] = null;
 			$data['status'] = true;
 		}
@@ -144,7 +146,9 @@ class Base extends CI_Controller {
 		{
 			$data['message'] = $this->image_lib->display_errors();
 			$data['status'] = false;
-		}else{
+		}
+		else
+		{
 			$data['message'] = null;
 			$data['status'] = true;
 		}
@@ -163,7 +167,9 @@ class Base extends CI_Controller {
 		{
 			$data['message'] = $this->image_lib->display_errors();
 			$data['status'] = false;
-		}else{
+		}
+		else
+		{
 			$data['message'] = null;
 			$data['status'] = true;
 		}
@@ -186,7 +192,9 @@ class Base extends CI_Controller {
 		{
 			$data['message'] = $this->image_lib->display_errors();
 			$data['status'] = false;
-		}else{
+		}
+		else
+		{
 			$data['message'] = null;
 			$data['status'] = true;
 		}
@@ -206,7 +214,9 @@ class Base extends CI_Controller {
 		{
 			$data['message'] = $this->image_lib->display_errors();
 			$data['status'] = false;
-		}else{
+		}
+		else
+		{
 			$data['message'] = null;
 			$data['status'] = true;
 		}
