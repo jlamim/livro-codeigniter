@@ -8,17 +8,20 @@ class Welcome extends CI_Controller {
 		$mail = new PHPMailer;
 
 		$mail->setFrom('from@example.com', 'Mailer');
-		$mail->addAddress('joe@example.net', 'Joe User'); 
+		$mail->addAddress('joe@example.net', 'Joe User');
 
 		$mail->isHTML(true);
 
 		$mail->Subject = 'Livro CodeIgniter';
 		$mail->Body    = 'Estou estudando o <b>capítulo 18!</b>';
 
-		if(!$mail->send()) {
+		if(!$mail->send())
+		{
 		    echo 'Email não enviado.';
 		    echo 'Erro: ' . $mail->ErrorInfo;
-		} else {
+		}
+		else
+		{
 		    echo 'Email enviado';
 		}
 	}
