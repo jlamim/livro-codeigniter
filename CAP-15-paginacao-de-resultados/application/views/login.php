@@ -1,5 +1,5 @@
 <?php $this->load->view('commons/header')?>
-<!-- Begin page content -->
+
 <div class="container">
 
   <?php

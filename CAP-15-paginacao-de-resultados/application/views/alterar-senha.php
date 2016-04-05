@@ -1,5 +1,5 @@
 <?php $this->load->view('commons/header')?>
-<!-- Begin page content -->
+
 <div class="container">
   <div class="col-md-4 col-md-offset-4">
     <h2 class="col-md-12">Alterar Senha</h2>
