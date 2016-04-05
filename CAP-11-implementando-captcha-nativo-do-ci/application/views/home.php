@@ -49,7 +49,7 @@
 
           <div class="inner cover">
             <h1 class="cover-heading">Ensinando através da prática</h1>
-            <p class="lead">Até aqui você aprendeu como criar um <i>controller</i>, uma <i>view</i> e a usar a função <i>base_url</i> do helper <i>url</i> utilizando o livro "CodeIgniter Da teoria à prática".</p>
+            <p class="lead">Até aqui você aprendeu como criar um <i>controller</i>, uma <i>view</i> e a usar a função <i>base_url</i> do helper <i>url</i> utilizando o livro "CodeIgniter - Produtividade na criação de aplicações web em PHP".</p>
           </div>
 
         </div>
@@ -57,15 +57,10 @@
       </div>
 
     </div>
-    <!-- Cover template for Bootstrap, by @mdo -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- IE10 viewport hack para Surface/desktop Windows 8 -->
     <script src="http://getbootstrap.com/assets/assets/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

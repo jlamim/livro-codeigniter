@@ -21,15 +21,21 @@ class Contato extends CI_Controller {
     $this->form_validation->set_rules('mensagem', 'Mensagem', 'trim|required|min_length[30]');
     $this->form_validation->set_rules('captcha', 'Captcha', 'trim|required|callback_captcha_check');
 
-    if($this->form_validation->run() == FALSE){
+    if($this->form_validation->run() == FALSE)
+    {
       $data['formErrors'] = validation_errors();
-    }else{
+    }
+    else
+    {
       $formData = $this->input->post();
       $emailStatus = $this->SendEmailToAdmin($formData['email'],$formData['nome'],"to@domain.com","To Name", $formData['assunto'], $formData['mensagem'],$formData['email'],$formData['nome']);
 
-      if($emailStatus){
+      if($emailStatus)
+      {
         $this->session->set_flashdata('success_msg', 'Contato recebido com sucesso!');
-      }else{
+      }
+      else
+      {
         $data['formErrors'] = "Desculpe! Não foi possível enviar o seu contato. tente novamente mais tarde.";
       }
     }
@@ -55,15 +61,21 @@ class Contato extends CI_Controller {
 
       $uploadCurriculo = $this->UploadFile('curriculo');
 
-      if($uploadCurriculo['error']){
+      if($uploadCurriculo['error'])
+      {
         $data['formErrors'] = $uploadCurriculo['message'];
-      }else{
+      }
+      else
+      {
         $formData = $this->input->post();
         $emailStatus = $this->SendEmailToAdmin($formData['email'],$formData['nome'],"to@domain.com","To Name", $formData['assunto'], $formData['mensagem'],$formData['email'],$formData['nome'],$uploadCurriculo['fileData']['full_path']);
 
-        if($emailStatus){
+        if($emailStatus)
+        {
           $this->session->set_flashdata('success_msg', 'Contato recebido com sucesso!');
-        }else{
+        }
+        else
+        {
           $data['formErrors'] = "Desculpe! Não foi possível enviar o seu contato. tente novamente mais tarde.";
         }
       }
@@ -122,10 +134,13 @@ class Contato extends CI_Controller {
 
     $this->upload->initialize($config);
 
-    if (!$this->upload->do_upload($inputFileName)) {
+    if (!$this->upload->do_upload($inputFileName))
+    {
       $data['error'] = true;
       $data['message'] = $this->upload->display_errors();
-    } else {
+    }
+    else
+    {
       $data['error'] = false;
       $data['fileData'] = $this->upload->data();
     }
